@@ -1,2 +1,3 @@
 # baked-demo
-A demonstration for baked framework
+
+A demonstration for baked framework.
