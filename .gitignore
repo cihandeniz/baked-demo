@@ -1,0 +1,14 @@
+# vs files
+.vs
+**/*.csproj.user
+
+# Vim swap files
+**/*.sw?
+
+# log file
+**/logs
+*.log*
+
+# dotnet build files
+obj/
+bin/
