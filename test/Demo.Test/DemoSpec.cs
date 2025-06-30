@@ -4,6 +4,6 @@ public class DemoSpec : ServiceSpec
 {
     static DemoSpec() =>
         Init(
-            business: c => c.DomainAssemblies(typeof(Empty).Assembly)
+            business: c => c.DomainAssemblies(typeof(Worklog).Assembly)
         );
 }
