@@ -28,6 +28,14 @@ public class SubmittingANewWorklog : DemoSpec
     }
 
     [Test]
+    public void Worklog_is_persisted_in_db()
+    {
+        var actual = NewWorklog();
+
+        actual.ShouldBeInserted();
+    }
+
+    [Test]
     public void It_has_a_log_text()
     {
         var actual = NewWorklog(text: "TEST TEXT");
