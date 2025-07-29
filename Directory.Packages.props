@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="Baked.Recipe.Service" Version="0.16.8" />
-    <PackageVersion Include="Baked.Recipe.Service.Application" Version="0.16.8" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+    <PackageVersion Include="Baked.Recipe.Service" Version="0.17.0" />
+    <PackageVersion Include="Baked.Recipe.Service.Application" Version="0.17.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0" />
     <PackageVersion Include="Quackers.TestLogger" Version="1.0.25" />
   </ItemGroup>

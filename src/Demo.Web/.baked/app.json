@@ -1,0 +1,59 @@
+{
+  "plugins": [
+    {
+      "expirationInMinutes": 60,
+      "name": "cacheApplication"
+    },
+    {
+      "expirationInMinutes": 60,
+      "name": "cacheUser"
+    },
+    {
+      "handlers": [
+        {
+          "statusCode": 401,
+          "behavior": "Redirect",
+          "behaviorArgument": {
+            "type": "Computed",
+            "composable": "useLoginRedirect",
+            "args": []
+          },
+          "order": 0
+        },
+        {
+          "statusCode": 400,
+          "behavior": "Alert",
+          "order": 0
+        },
+        {
+          "behavior": "Page",
+          "order": 0
+        }
+      ],
+      "defaultAlertTitle": "Unexpected_Error",
+      "defaultAlertMessage": "Please_contact_system_administrator",
+      "name": "errorHandling"
+    },
+    {
+      "supportedLanguages": [
+        {
+          "code": "en",
+          "name": "English"
+        }
+      ],
+      "name": "localization"
+    }
+  ],
+  "i18n": {
+    "defaultLanguage": {
+      "code": "en",
+      "name": "English"
+    },
+    "supportedLanguages": [
+      {
+        "code": "en",
+        "name": "English"
+      }
+    ]
+  }
+}

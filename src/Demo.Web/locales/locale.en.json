@@ -1,0 +1,14 @@
+{
+  "DataPanel": {
+    "Select_required_values_to_view_this_data": "Select required values to view this data"
+  },
+  "DataTable": {
+    "No_records_found": "No records found"
+  },
+  "MenuPage": {
+    "No_item_available": "No item available!"
+  },
+  "ReportPage": {
+    "Select_required_values_to_view_this_report": "Select required values to view this report"
+  }
+}

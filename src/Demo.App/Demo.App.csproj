@@ -20,4 +20,11 @@
     <Using Include="Demo" />
   </ItemGroup>
 
+  <Target Name="SetCopyComponentDescriptors" BeforeTargets="Generate">
+    <PropertyGroup>
+      <CopyComponentDescriptors>true</CopyComponentDescriptors>
+      <UiAppDir>$(ProjectDir)..\Demo.Web</UiAppDir>
+    </PropertyGroup>
+  </Target>
+
 </Project>
