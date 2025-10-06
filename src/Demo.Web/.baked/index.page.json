@@ -1,0 +1,24 @@
+{
+  "type": "MenuPage",
+  "schema": {
+    "sections": [
+      {
+        "links": [
+          {
+            "title": "",
+            "component": {
+              "type": "CardLink",
+              "schema": {
+                "route": "/report/monthly-progress",
+                "icon": "pi pi-arrow-right",
+                "title": "Monthly Progress",
+                "description": "Shows current month's progress report"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "path": "index"
+  }
+}

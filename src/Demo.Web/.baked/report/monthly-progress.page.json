@@ -1,0 +1,140 @@
+{
+  "type": "ReportPage",
+  "schema": {
+    "title": {
+      "title": "Monthly Progress",
+      "description": "Shows current month's progress report",
+      "actions": []
+    },
+    "queryParameters": [],
+    "tabs": [
+      {
+        "id": "default",
+        "contents": [
+          {
+            "component": {
+              "type": "DataPanel",
+              "schema": {
+                "title": {
+                  "type": "Inline",
+                  "value": "GetWorklogs"
+                },
+                "localizeTitle": true,
+                "parameters": [],
+                "content": {
+                  "type": "DataTable",
+                  "schema": {
+                    "columns": [
+                      {
+                        "prop": "id",
+                        "component": {
+                          "fallback": {
+                            "type": "String",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Id",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "beginning",
+                        "component": {
+                          "fallback": {
+                            "type": "None",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Beginning",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "ending",
+                        "component": {
+                          "fallback": {
+                            "type": "None",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Ending",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "text",
+                        "component": {
+                          "fallback": {
+                            "type": "String",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Text",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "work",
+                        "component": {
+                          "fallback": {
+                            "type": "None",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Work",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "contributor",
+                        "component": {
+                          "fallback": {
+                            "type": "None",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Contributor",
+                        "exportable": true
+                      },
+                      {
+                        "prop": "duration",
+                        "component": {
+                          "fallback": {
+                            "type": "None",
+                            "schema": {}
+                          },
+                          "conditions": []
+                        },
+                        "title": "Duration",
+                        "exportable": true
+                      }
+                    ],
+                    "paginator": true,
+                    "rows": 5,
+                    "exportOptions": {
+                      "csvSeparator": ";",
+                      "fileName": "GetWorklogs.ExportFileName",
+                      "buttonIcon": "pi pi-download"
+                    }
+                  },
+                  "data": {
+                    "type": "Remote",
+                    "path": "report/monthly-progress/worklogs",
+                    "query": {
+                      "type": "Computed",
+                      "composable": "useQuery",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            },
+            "key": "get-worklogs"
+          }
+        ]
+      }
+    ],
+    "path": "report/monthly-progress"
+  }
+}

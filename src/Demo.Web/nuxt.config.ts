@@ -1,6 +1,5 @@
 import Aura from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
-import app from "./.baked/app.json" assert { type: "json" };
 
 const Mouseless = definePreset(Aura, {
   semantic: {
@@ -22,7 +21,6 @@ const Mouseless = definePreset(Aura, {
 
 export default defineNuxtConfig({
   baked: {
-    app: app,
     components: {
       Page: {
         title: "Demo"
@@ -30,7 +28,7 @@ export default defineNuxtConfig({
     },
     composables: {
       useDataFetcher: {
-        baseURL: process.env.API_BASE_URL,
+        baseURL: import.meta.env.API_BASE_URL,
         retry: true
       }
     },

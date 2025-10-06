@@ -1,1 +1,21 @@
-{}
+{
+  "Access Denied": "Access Denied",
+  "Application Error": "Application Error",
+  "Beginning": "Beginning",
+  "Contributor": "Contributor",
+  "Duration": "Duration",
+  "Ending": "Ending",
+  "GetWorklogs": "Worklogs",
+  "GetWorklogs.ExportFileName": "worklogs",
+  "Home": "Home",
+  "Id": "Id",
+  "Monthly Progress": "Monthly Progress",
+  "Page Not Found": "Page Not Found",
+  "Please contact system administrator.": "Please contact system administrator.",
+  "Shows current month's progress report": "Shows current month's progress report",
+  "Text": "Text",
+  "The page you want to view is either deleted or outdated.": "The page you want to view is either deleted or outdated.",
+  "Unexpected Error": "Unexpected Error",
+  "Work": "Work",
+  "You do not have the permision to view the address or data specified.": "You do not have the permision to view the address or data specified."
+}

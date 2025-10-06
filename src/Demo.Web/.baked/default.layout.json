@@ -1,0 +1,51 @@
+{
+  "type": "DefaultLayout",
+  "schema": {
+    "path": "default",
+    "sideMenu": {
+      "type": "SideMenu",
+      "schema": {
+        "logo": "logo.svg",
+        "largeLogo": "logo-full.svg",
+        "menu": [
+          {
+            "route": "/",
+            "icon": "pi pi-home",
+            "title": "Home"
+          },
+          {
+            "route": "/report/monthly-progress",
+            "icon": "pi pi-arrow-right",
+            "title": "Monthly Progress"
+          }
+        ]
+      },
+      "data": {
+        "type": "Computed",
+        "composable": "useNuxtRoute",
+        "args": []
+      }
+    },
+    "header": {
+      "type": "Header",
+      "schema": {
+        "sitemap": {
+          "/": {
+            "route": "/",
+            "icon": "pi pi-home"
+          },
+          "/report/monthly-progress": {
+            "route": "/report/monthly-progress",
+            "icon": "pi pi-arrow-right",
+            "title": "Monthly Progress"
+          }
+        }
+      },
+      "data": {
+        "type": "Computed",
+        "composable": "useNuxtRoute",
+        "args": []
+      }
+    }
+  }
+}
