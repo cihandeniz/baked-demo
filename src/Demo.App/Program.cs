@@ -1,5 +1,5 @@
 ﻿Bake.New
-    .Service(
+    .Monolith(
         authentications: [],
         business: c => c.DomainAssemblies(typeof(Worklog).Assembly),
         cors: c => c.AspNetCore("http://localhost:3000"),

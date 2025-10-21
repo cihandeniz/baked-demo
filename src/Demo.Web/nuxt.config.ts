@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-04-02",
   components: { dirs: ["~/components"] },
-  modules: [ "@nuxt/eslint", "baked-recipe-admin" ],
-  router: { options: { strict: true } }
+  modules: [ "@nuxt/eslint", "@mouseless/baked" ],
+  router: { options: { strict: true } },
+  vite: { optimizeDeps: { noDiscovery: true } }
 });

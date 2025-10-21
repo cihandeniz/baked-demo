@@ -29,7 +29,7 @@
                         "prop": "id",
                         "component": {
                           "fallback": {
-                            "type": "String",
+                            "type": "Text",
                             "schema": {}
                           },
                           "conditions": []
@@ -65,7 +65,7 @@
                         "prop": "text",
                         "component": {
                           "fallback": {
-                            "type": "String",
+                            "type": "Text",
                             "schema": {}
                           },
                           "conditions": []

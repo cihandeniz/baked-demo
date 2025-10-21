@@ -1,6 +1,6 @@
 namespace Demo.Test;
 
-public class DemoSpec : ServiceSpec
+public class DemoSpec : MonolithSpec
 {
     static DemoSpec() =>
         Init(
