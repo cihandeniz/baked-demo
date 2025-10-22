@@ -20,6 +20,5 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-04-02",
   components: { dirs: ["~/components"] },
   modules: [ "@nuxt/eslint", "@mouseless/baked" ],
-  router: { options: { strict: true } },
-  vite: { optimizeDeps: { noDiscovery: true } }
+  router: { options: { strict: true } }
 });
