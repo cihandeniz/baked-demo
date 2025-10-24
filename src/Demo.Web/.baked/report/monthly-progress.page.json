@@ -26,18 +26,6 @@
                   "schema": {
                     "columns": [
                       {
-                        "prop": "id",
-                        "component": {
-                          "fallback": {
-                            "type": "Text",
-                            "schema": {}
-                          },
-                          "conditions": []
-                        },
-                        "title": "Id",
-                        "exportable": true
-                      },
-                      {
                         "prop": "beginning",
                         "component": {
                           "fallback": {
@@ -110,6 +98,7 @@
                         "exportable": true
                       }
                     ],
+                    "dataKey": "id",
                     "paginator": true,
                     "rows": 5,
                     "exportOptions": {

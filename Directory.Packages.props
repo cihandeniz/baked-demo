@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="Baked.Abstractions" Version="0.19.1" />
-    <PackageVersion Include="Baked" Version="0.19.1" />
+    <PackageVersion Include="Baked.Abstractions" Version="0.19.2" />
+    <PackageVersion Include="Baked" Version="0.19.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.2.0" />
     <PackageVersion Include="Quackers.TestLogger" Version="1.0.25" />

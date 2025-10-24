@@ -20,7 +20,7 @@
     "sass": "1.93.2"
   },
   "dependencies": {
-    "@mouseless/baked": "0.19.1",
+    "@mouseless/baked": "0.19.2",
     "@nuxtjs/i18n": "10.1.1",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@primeuix/themes": "1.2.5",
