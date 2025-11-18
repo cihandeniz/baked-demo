@@ -10,7 +10,7 @@ public class AddingANewWork : DemoSpec
 
         var newWork = GiveMe.The<Func<Work>>();
 
-        return newWork().With();
+        return newWork().With(name);
     }
 
     [Test]

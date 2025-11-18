@@ -20,7 +20,18 @@
                   "value": "GetWorklogs"
                 },
                 "localizeTitle": true,
-                "parameters": [],
+                "parameters": [
+                  {
+                    "name": "work",
+                    "component": {
+                      "type": "InputText",
+                      "schema": {
+                        "name": "work",
+                        "placeholder": "Work"
+                      }
+                    }
+                  }
+                ],
                 "content": {
                   "type": "DataTable",
                   "schema": {
@@ -29,7 +40,7 @@
                         "prop": "beginning",
                         "component": {
                           "fallback": {
-                            "type": "None",
+                            "type": "Text",
                             "schema": {}
                           },
                           "conditions": []
@@ -41,7 +52,7 @@
                         "prop": "ending",
                         "component": {
                           "fallback": {
-                            "type": "None",
+                            "type": "Text",
                             "schema": {}
                           },
                           "conditions": []
@@ -65,8 +76,10 @@
                         "prop": "work",
                         "component": {
                           "fallback": {
-                            "type": "None",
-                            "schema": {}
+                            "type": "TextProp",
+                            "schema": {
+                              "prop": "name"
+                            }
                           },
                           "conditions": []
                         },
@@ -77,8 +90,10 @@
                         "prop": "contributor",
                         "component": {
                           "fallback": {
-                            "type": "None",
-                            "schema": {}
+                            "type": "TextProp",
+                            "schema": {
+                              "prop": "name"
+                            }
                           },
                           "conditions": []
                         },
@@ -89,7 +104,7 @@
                         "prop": "duration",
                         "component": {
                           "fallback": {
-                            "type": "None",
+                            "type": "Text",
                             "schema": {}
                           },
                           "conditions": []
@@ -100,20 +115,24 @@
                     ],
                     "dataKey": "id",
                     "paginator": true,
-                    "rows": 5,
-                    "exportOptions": {
-                      "csvSeparator": ";",
-                      "fileName": "GetWorklogs.ExportFileName",
-                      "buttonIcon": "pi pi-download"
-                    }
+                    "rows": 5
                   },
                   "data": {
                     "type": "Remote",
                     "path": "report/monthly-progress/worklogs",
                     "query": {
-                      "type": "Computed",
-                      "composable": "useQuery",
-                      "args": []
+                      "type": "Composite",
+                      "parts": [
+                        {
+                          "type": "Computed",
+                          "composable": "useQuery",
+                          "args": []
+                        },
+                        {
+                          "type": "Injected",
+                          "key": "Custom"
+                        }
+                      ]
                     }
                   }
                 }

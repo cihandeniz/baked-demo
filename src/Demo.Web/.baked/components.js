@@ -7,6 +7,7 @@ import {
 	Filter,
 	Header,
 	Icon,
+	InputText,
 	LanguageSwitcher,
 	MenuPage,
 	Message,
@@ -21,7 +22,8 @@ import {
 	Select,
 	SelectButton,
 	SideMenu,
-	Text
+	Text,
+	TextProp
 } from "#components";
 
 export {
@@ -33,6 +35,7 @@ export {
 	Filter,
 	Header,
 	Icon,
+	InputText,
 	LanguageSwitcher,
 	MenuPage,
 	Message,
@@ -47,5 +50,6 @@ export {
 	Select,
 	SelectButton,
 	SideMenu,
-	Text
+	Text,
+	TextProp
 }
