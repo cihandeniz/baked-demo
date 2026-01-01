@@ -1,12 +1,12 @@
 {
-  "type": "ReportPage",
+  "type": "TabbedPage",
   "schema": {
     "title": {
       "title": "Monthly Progress",
       "description": "Shows current month's progress report",
       "actions": []
     },
-    "queryParameters": [],
+    "inputs": [],
     "tabs": [
       {
         "id": "default",
@@ -20,14 +20,13 @@
                   "value": "GetWorklogs"
                 },
                 "localizeTitle": true,
-                "parameters": [
+                "inputs": [
                   {
                     "name": "work",
                     "component": {
                       "type": "InputText",
                       "schema": {
-                        "name": "work",
-                        "placeholder": "Work"
+                        "label": "Work"
                       }
                     }
                   }
@@ -37,77 +36,135 @@
                   "schema": {
                     "columns": [
                       {
-                        "prop": "beginning",
+                        "key": "beginning",
                         "component": {
-                          "fallback": {
-                            "type": "Text",
-                            "schema": {}
-                          },
-                          "conditions": []
+                          "type": "Text",
+                          "schema": {},
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.beginning"
+                          }
                         },
                         "title": "Beginning",
                         "exportable": true
                       },
                       {
-                        "prop": "ending",
+                        "key": "ending",
                         "component": {
-                          "fallback": {
-                            "type": "Text",
-                            "schema": {}
-                          },
-                          "conditions": []
+                          "type": "Text",
+                          "schema": {},
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.ending"
+                          }
                         },
                         "title": "Ending",
                         "exportable": true
                       },
                       {
-                        "prop": "text",
+                        "key": "text",
                         "component": {
-                          "fallback": {
-                            "type": "Text",
-                            "schema": {}
-                          },
-                          "conditions": []
+                          "type": "Text",
+                          "schema": {},
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.text"
+                          }
                         },
                         "title": "Text",
                         "exportable": true
                       },
                       {
-                        "prop": "work",
+                        "key": "work",
                         "component": {
-                          "fallback": {
-                            "type": "TextProp",
-                            "schema": {
-                              "prop": "name"
+                          "type": "MissingComponent",
+                          "schema": {
+                            "path": [
+                              "page",
+                              "monthly-progress",
+                              "tabbed-page",
+                              "tabs",
+                              "default",
+                              "contents",
+                              "0",
+                              "get-worklogs",
+                              "component",
+                              "data-panel",
+                              "content",
+                              "data-table",
+                              "columns",
+                              "work",
+                              "component"
+                            ],
+                            "source": {
+                              "type": "PropertyModel",
+                              "path": [
+                                "Worklog",
+                                "Work"
+                              ]
                             }
                           },
-                          "conditions": []
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.work"
+                          }
                         },
                         "title": "Work",
                         "exportable": true
                       },
                       {
-                        "prop": "contributor",
+                        "key": "contributor",
                         "component": {
-                          "fallback": {
-                            "type": "TextProp",
-                            "schema": {
-                              "prop": "name"
+                          "type": "MissingComponent",
+                          "schema": {
+                            "path": [
+                              "page",
+                              "monthly-progress",
+                              "tabbed-page",
+                              "tabs",
+                              "default",
+                              "contents",
+                              "0",
+                              "get-worklogs",
+                              "component",
+                              "data-panel",
+                              "content",
+                              "data-table",
+                              "columns",
+                              "contributor",
+                              "component"
+                            ],
+                            "source": {
+                              "type": "PropertyModel",
+                              "path": [
+                                "Worklog",
+                                "Contributor"
+                              ]
                             }
                           },
-                          "conditions": []
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.contributor"
+                          }
                         },
                         "title": "Contributor",
                         "exportable": true
                       },
                       {
-                        "prop": "duration",
+                        "key": "duration",
                         "component": {
-                          "fallback": {
-                            "type": "Text",
-                            "schema": {}
-                          },
-                          "conditions": []
+                          "type": "Text",
+                          "schema": {},
+                          "data": {
+                            "type": "Context",
+                            "key": "parent",
+                            "prop": "row.duration"
+                          }
                         },
                         "title": "Duration",
                         "exportable": true
@@ -115,7 +172,24 @@
                     ],
                     "dataKey": "id",
                     "paginator": true,
-                    "rows": 5
+                    "rows": 5,
+                    "exportOptions": {
+                      "csvSeparator": ";",
+                      "fileName": "GetWorklogs.ExportFileName",
+                      "buttonIcon": "pi pi-download"
+                    },
+                    "actions": {
+                      "key": "Actions",
+                      "component": {
+                        "type": "Composite",
+                        "schema": {
+                          "parts": []
+                        }
+                      },
+                      "alignRight": true,
+                      "exportable": false,
+                      "frozen": true
+                    }
                   },
                   "data": {
                     "type": "Remote",
@@ -125,12 +199,18 @@
                       "parts": [
                         {
                           "type": "Computed",
-                          "composable": "useQuery",
-                          "args": []
+                          "composable": "useNuxtRoute",
+                          "options": {
+                            "type": "Inline",
+                            "value": {
+                              "property": "query"
+                            }
+                          }
                         },
                         {
-                          "type": "Injected",
-                          "key": "Custom"
+                          "type": "Context",
+                          "key": "parent",
+                          "prop": "parameters"
                         }
                       ]
                     }

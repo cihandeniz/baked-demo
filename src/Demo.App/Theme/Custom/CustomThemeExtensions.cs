@@ -1,4 +1,5 @@
 using Baked.Theme;
+using Baked.Ui;
 using Demo.Report;
 
 namespace Baked;
@@ -11,7 +12,7 @@ public static class CustomThemeExtensions
             r => r.Index() with { Page = p => p.Described(d => d.Menu()) },
             r => r.Root("/report/monthly-progress", "Monthly Progress", "pi pi-arrow-right") with
             {
-                Page = p => p.Generated(d => d.From<MonthlyProgress>()),
+                Page = p => p.Generated(d => d.Type<MonthlyProgress, TabbedPage>()),
                 Description = "Shows current month's progress report"
             }
         ]);

@@ -2,6 +2,7 @@ import Aura from "@primeuix/themes/aura";
 
 export default defineNuxtConfig({
   baked: {
+    apiBaseURL: import.meta.env.API_BASE_URL,
     components: {
       Page: {
         title: "Demo"
@@ -9,7 +10,6 @@ export default defineNuxtConfig({
     },
     composables: {
       useDataFetcher: {
-        baseURL: import.meta.env.API_BASE_URL,
         retry: true
       }
     },

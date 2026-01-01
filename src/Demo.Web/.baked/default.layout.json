@@ -22,8 +22,7 @@
       },
       "data": {
         "type": "Computed",
-        "composable": "useNuxtRoute",
-        "args": []
+        "composable": "useNuxtRoute"
       }
     },
     "header": {
@@ -43,8 +42,7 @@
       },
       "data": {
         "type": "Computed",
-        "composable": "useNuxtRoute",
-        "args": []
+        "composable": "useNuxtRoute"
       }
     }
   }

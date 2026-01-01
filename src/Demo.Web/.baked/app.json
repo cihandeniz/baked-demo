@@ -2,11 +2,15 @@
   "plugins": [
     {
       "expirationInMinutes": 60,
-      "name": "cacheApplication"
+      "basePath": "./runtime/plugins/",
+      "name": "cacheApplication",
+      "resolver": "MetaUrl"
     },
     {
       "expirationInMinutes": 60,
-      "name": "cacheUser"
+      "basePath": "./runtime/plugins/",
+      "name": "cacheUser",
+      "resolver": "MetaUrl"
     },
     {
       "handlers": [
@@ -15,8 +19,7 @@
           "behavior": "Redirect",
           "behaviorArgument": {
             "type": "Computed",
-            "composable": "useLoginRedirect",
-            "args": []
+            "composable": "useLoginRedirect"
           },
           "order": 0
         },
@@ -32,7 +35,9 @@
       ],
       "defaultAlertTitle": "Unexpected Error",
       "defaultAlertMessage": "Please contact system administrator",
-      "name": "errorHandling"
+      "basePath": "./runtime/plugins/",
+      "name": "errorHandling",
+      "resolver": "MetaUrl"
     },
     {
       "supportedLanguages": [
@@ -41,7 +46,9 @@
           "name": "English"
         }
       ],
-      "name": "localization"
+      "basePath": "./runtime/plugins/",
+      "name": "localization",
+      "resolver": "MetaUrl"
     }
   ],
   "error": {
@@ -50,11 +57,13 @@
       "errorInfos": {
         "403": {
           "title": "Access Denied",
-          "message": "You do not have the permision to view the address or data specified."
+          "message": "You do not have the permission to view the address or data specified.",
+          "showSafeLinks": true
         },
         "404": {
           "title": "Page Not Found",
-          "message": "The page you want to view is either deleted or outdated."
+          "message": "The page you want to view is either deleted or outdated.",
+          "showSafeLinks": true
         },
         "500": {
           "title": "Unexpected Error",
@@ -89,8 +98,7 @@
     },
     "data": {
       "type": "Computed",
-      "composable": "useNuxtError",
-      "args": []
+      "composable": "useNuxtError"
     }
   },
   "i18n": {

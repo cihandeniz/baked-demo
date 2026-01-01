@@ -6,6 +6,7 @@
   "Duration": "Duration",
   "Ending": "Ending",
   "GetWorklogs": "Worklogs",
+  "GetWorklogs.ExportFileName": "worklogs",
   "Home": "Home",
   "Monthly Progress": "Monthly Progress",
   "Page Not Found": "Page Not Found",
@@ -15,5 +16,5 @@
   "The page you want to view is either deleted or outdated.": "The page you want to view is either deleted or outdated.",
   "Unexpected Error": "Unexpected Error",
   "Work": "Work",
-  "You do not have the permision to view the address or data specified.": "You do not have the permision to view the address or data specified."
+  "You do not have the permission to view the address or data specified.": "You do not have the permission to view the address or data specified."
 }
