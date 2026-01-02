@@ -2,9 +2,9 @@
 
 namespace Demo;
 
-public class Work(IEntityContext<Work> _context)
+public class Work(IEntityContext<Work> _context, Worklogs _worklogs)
 {
-    protected Work() : this(default!) { }
+    protected Work() : this(default!, default!) { }
 
     public virtual Guid Id { get; protected set; } = default!;
     public virtual string Name { get; protected set; } = default!;
@@ -17,6 +17,12 @@ public class Work(IEntityContext<Work> _context)
 
         return this;
     }
+
+    public virtual void Delete() =>
+        _context.Delete(this);
+
+    public virtual List<Worklog> GetWorklogs() =>
+        _worklogs.ByWork(this);
 }
 
 public class Works(IQueryContext<Work> _context)

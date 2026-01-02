@@ -38,8 +38,33 @@
                       {
                         "key": "beginning",
                         "component": {
-                          "type": "Text",
-                          "schema": {},
+                          "type": "MissingComponent",
+                          "schema": {
+                            "path": [
+                              "page",
+                              "monthly-progress",
+                              "tabbed-page",
+                              "tabs",
+                              "default",
+                              "contents",
+                              "0",
+                              "get-worklogs",
+                              "component",
+                              "data-panel",
+                              "content",
+                              "data-table",
+                              "columns",
+                              "beginning",
+                              "component"
+                            ],
+                            "source": {
+                              "type": "PropertyModel",
+                              "path": [
+                                "Worklog",
+                                "Beginning"
+                              ]
+                            }
+                          },
                           "data": {
                             "type": "Context",
                             "key": "parent",
@@ -52,8 +77,33 @@
                       {
                         "key": "ending",
                         "component": {
-                          "type": "Text",
-                          "schema": {},
+                          "type": "MissingComponent",
+                          "schema": {
+                            "path": [
+                              "page",
+                              "monthly-progress",
+                              "tabbed-page",
+                              "tabs",
+                              "default",
+                              "contents",
+                              "0",
+                              "get-worklogs",
+                              "component",
+                              "data-panel",
+                              "content",
+                              "data-table",
+                              "columns",
+                              "ending",
+                              "component"
+                            ],
+                            "source": {
+                              "type": "PropertyModel",
+                              "path": [
+                                "Worklog",
+                                "Ending"
+                              ]
+                            }
+                          },
                           "data": {
                             "type": "Context",
                             "key": "parent",
@@ -158,8 +208,33 @@
                       {
                         "key": "duration",
                         "component": {
-                          "type": "Text",
-                          "schema": {},
+                          "type": "MissingComponent",
+                          "schema": {
+                            "path": [
+                              "page",
+                              "monthly-progress",
+                              "tabbed-page",
+                              "tabs",
+                              "default",
+                              "contents",
+                              "0",
+                              "get-worklogs",
+                              "component",
+                              "data-panel",
+                              "content",
+                              "data-table",
+                              "columns",
+                              "duration",
+                              "component"
+                            ],
+                            "source": {
+                              "type": "PropertyModel",
+                              "path": [
+                                "Worklog",
+                                "Duration"
+                              ]
+                            }
+                          },
                           "data": {
                             "type": "Context",
                             "key": "parent",
@@ -173,11 +248,6 @@
                     "dataKey": "id",
                     "paginator": true,
                     "rows": 5,
-                    "exportOptions": {
-                      "csvSeparator": ";",
-                      "fileName": "GetWorklogs.ExportFileName",
-                      "buttonIcon": "pi pi-download"
-                    },
                     "actions": {
                       "key": "Actions",
                       "component": {

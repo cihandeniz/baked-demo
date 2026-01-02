@@ -52,4 +52,7 @@ public class Worklogs(IQueryContext<Worklog> _context)
     ) => _context.By(
         whereIf: [(workName is not null, w => w.Work.Name.StartsWith(workName ?? string.Empty))]
     );
+
+    internal List<Worklog> ByWork(Work work) =>
+        _context.By(w => w.Work == work);
 }

@@ -17,6 +17,9 @@ public class Contributor(IEntityContext<Contributor> _context)
 
         return this;
     }
+
+    public virtual void Delete() =>
+        _context.Delete(this);
 }
 
 public class Contributors(IQueryContext<Contributor> _context)

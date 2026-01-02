@@ -92,6 +92,15 @@
             "title": "Monthly Progress",
             "description": "Shows current month's progress report"
           }
+        },
+        {
+          "type": "CardLink",
+          "schema": {
+            "route": "/admin",
+            "icon": "pi pi-warehouse",
+            "title": "Admin",
+            "description": "Manage data"
+          }
         }
       ],
       "safeLinksMessage": "Try the links from the menu below to view the page you want to access:"

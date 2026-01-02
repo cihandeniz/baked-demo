@@ -3,7 +3,6 @@ using Baked.Theme;
 using Baked.Theme.Default;
 using Baked.Ui;
 
-using B = Baked.Ui.Components;
 using D = Demo.Ui.Components;
 
 using Route = Baked.Theme.Route;
@@ -19,13 +18,9 @@ public class CustomThemeFeature(IEnumerable<Func<Router, Route>> routes)
 
         configurator.ConfigureDomainModelBuilder(builder =>
         {
-            builder.Conventions.AddPropertyComponent(
-                when: c => c.Property.PropertyType.Is<DateTime>() || c.Property.PropertyType.Is<TimeSpan>(),
-                component: c => B.Text()
-            );
-
             builder.Conventions.RemoveMethodAttribute<DescriptorBuilderAttribute<DataTable.Export>>(c => true,
-                order: int.MaxValue
+                order: int.MaxValue,
+                requiresIndex: false
             );
         });
 

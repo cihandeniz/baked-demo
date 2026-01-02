@@ -25,5 +25,6 @@ Service Unavailable=Service Unavailable
 The service is currently unavailable. Please try again later.=The service is currently unavailable. Please try again later.
 
 // project keys=//
+GetContributors=Contributors
+GetWorks=Works
 GetWorklogs=Worklogs
-GetWorklogs.ExportFileName=worklogs

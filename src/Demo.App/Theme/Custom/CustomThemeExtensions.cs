@@ -14,6 +14,11 @@ public static class CustomThemeExtensions
             {
                 Page = p => p.Generated(d => d.Type<MonthlyProgress, TabbedPage>()),
                 Description = "Shows current month's progress report"
+            },
+            r => r.Root("/admin", "Admin", "pi pi-warehouse") with
+            {
+                Page = p => p.Generated(d => d.Type<Admin, SimplePage>()),
+                Description = "Manage data"
             }
         ]);
 }

@@ -17,6 +17,11 @@
             "route": "/report/monthly-progress",
             "icon": "pi pi-arrow-right",
             "title": "Monthly Progress"
+          },
+          {
+            "route": "/admin",
+            "icon": "pi pi-warehouse",
+            "title": "Admin"
           }
         ]
       },
@@ -37,6 +42,11 @@
             "route": "/report/monthly-progress",
             "icon": "pi pi-arrow-right",
             "title": "Monthly Progress"
+          },
+          "/admin": {
+            "route": "/admin",
+            "icon": "pi pi-warehouse",
+            "title": "Admin"
           }
         }
       },

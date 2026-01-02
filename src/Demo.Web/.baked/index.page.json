@@ -15,6 +15,18 @@
                 "description": "Shows current month's progress report"
               }
             }
+          },
+          {
+            "title": "",
+            "component": {
+              "type": "CardLink",
+              "schema": {
+                "route": "/admin",
+                "icon": "pi pi-warehouse",
+                "title": "Admin",
+                "description": "Manage data"
+              }
+            }
           }
         ]
       }
