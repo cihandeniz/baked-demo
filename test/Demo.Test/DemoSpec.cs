@@ -4,6 +4,6 @@ public class DemoSpec : MonolithSpec
 {
     static DemoSpec() =>
         Init(
-            business: c => c.DomainAssemblies(typeof(Worklog).Assembly)
+            business: c => c.DomainAssemblies(typeof(LeagueNight).Assembly)
         );
 }

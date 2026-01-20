@@ -2,25 +2,16 @@ namespace Demo.Test;
 
 public static class Extensions
 {
-    public static Work AWork(this Stubber giveMe,
-        string? name = default
+    public static LeagueNight ALeagueNight(this Stubber giveMe,
+        DateTime? date = default
     )
     {
-        name ??= "test work";
-
-        return giveMe.A<Work>().With(name);
-    }
-
-    public static Contributor AContributor(this Stubber giveMe,
-        string? name = default
-    )
-    {
-        name ??= giveMe.AString();
+        date ??= giveMe.ADateTime();
 
         return giveMe
-            .A<Contributor>()
+            .A<LeagueNight>()
             .With(
-                name: name
+                date: date.Value
              );
     }
 }

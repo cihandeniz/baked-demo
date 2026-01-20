@@ -1,0 +1,116 @@
+{
+  "type": "SimplePage",
+  "schema": {
+    "title": {
+      "type": "PageTitle",
+      "schema": {
+        "title": "League Night",
+        "description": "Display the league night details",
+        "actions": []
+      }
+    },
+    "contents": [
+      {
+        "component": {
+          "type": "Fieldset",
+          "schema": {
+            "titleProp": "date",
+            "fields": [
+              {
+                "key": "date",
+                "label": "Date",
+                "component": {
+                  "type": "Text",
+                  "schema": {},
+                  "data": {
+                    "type": "Context",
+                    "key": "parent",
+                    "prop": "data.date"
+                  }
+                }
+              }
+            ]
+          },
+          "data": {
+            "type": "Remote",
+            "path": "league-nights/{id:guid}",
+            "params": {
+              "type": "Computed",
+              "composable": "useNuxtRoute",
+              "options": {
+                "type": "Inline",
+                "value": {
+                  "property": "params"
+                }
+              }
+            }
+          }
+        },
+        "key": "fields"
+      },
+      {
+        "component": {
+          "type": "DataPanel",
+          "schema": {
+            "title": {
+              "type": "Inline",
+              "value": "GetLaneMoneySlips"
+            },
+            "localizeTitle": true,
+            "inputs": [],
+            "content": {
+              "type": "DataTable",
+              "schema": {
+                "columns": [
+                  {
+                    "key": "laneNumber",
+                    "component": {
+                      "type": "Number",
+                      "schema": {},
+                      "data": {
+                        "type": "Context",
+                        "key": "parent",
+                        "prop": "row.laneNumber"
+                      }
+                    },
+                    "title": "Lane Number",
+                    "alignRight": true,
+                    "exportable": true
+                  }
+                ],
+                "paginator": true,
+                "rows": 5
+              },
+              "data": {
+                "type": "Remote",
+                "path": "league-nights/{id:guid}/lane-money-slips",
+                "query": {
+                  "type": "Computed",
+                  "composable": "useNuxtRoute",
+                  "options": {
+                    "type": "Inline",
+                    "value": {
+                      "property": "query"
+                    }
+                  }
+                },
+                "params": {
+                  "type": "Computed",
+                  "composable": "useNuxtRoute",
+                  "options": {
+                    "type": "Inline",
+                    "value": {
+                      "property": "params"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "key": "get-lane-money-slips"
+      }
+    ],
+    "path": "league-nights/[id]"
+  }
+}

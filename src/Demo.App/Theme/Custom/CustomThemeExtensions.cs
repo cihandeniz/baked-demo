@@ -1,6 +1,5 @@
 using Baked.Theme;
 using Baked.Ui;
-using Demo.Report;
 
 namespace Baked;
 
@@ -10,15 +9,15 @@ public static class CustomThemeExtensions
         new(
         [
             r => r.Index() with { Page = p => p.Described(d => d.Menu()) },
-            r => r.Root("/report/monthly-progress", "Monthly Progress", "pi pi-arrow-right") with
+            r => r.Root("/league-nights/new", "New League Night", "pi pi-arrow-right") with
             {
-                Page = p => p.Generated(d => d.Type<MonthlyProgress, TabbedPage>()),
-                Description = "Shows current month's progress report"
+                Page = p => p.Generated(d => d.Method<LeagueNight, FormPage>(nameof(LeagueNight.With))),
+                Description = "Create a new league night"
             },
-            r => r.Root("/admin", "Admin", "pi pi-warehouse") with
+            r => r.RootDynamic("/league-nights/[id]", "League Night") with
             {
-                Page = p => p.Generated(d => d.Type<Admin, SimplePage>()),
-                Description = "Manage data"
+                Page = p => p.Generated(d => d.Type<LeagueNight, SimplePage>()),
+                Description = "Display the league night details"
             }
         ]);
 }

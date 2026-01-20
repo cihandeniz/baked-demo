@@ -14,14 +14,9 @@
             "title": "Home"
           },
           {
-            "route": "/report/monthly-progress",
+            "route": "/league-nights/new",
             "icon": "pi pi-arrow-right",
-            "title": "Monthly Progress"
-          },
-          {
-            "route": "/admin",
-            "icon": "pi pi-warehouse",
-            "title": "Admin"
+            "title": "New League Night"
           }
         ]
       },
@@ -38,15 +33,14 @@
             "route": "/",
             "icon": "pi pi-home"
           },
-          "/report/monthly-progress": {
-            "route": "/report/monthly-progress",
+          "/league-nights/new": {
+            "route": "/league-nights/new",
             "icon": "pi pi-arrow-right",
-            "title": "Monthly Progress"
+            "title": "New League Night"
           },
-          "/admin": {
-            "route": "/admin",
-            "icon": "pi pi-warehouse",
-            "title": "Admin"
+          "/league-nights/[id]": {
+            "route": "/league-nights/[id]",
+            "title": "League Night"
           }
         }
       },

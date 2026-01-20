@@ -87,19 +87,10 @@
         {
           "type": "CardLink",
           "schema": {
-            "route": "/report/monthly-progress",
+            "route": "/league-nights/new",
             "icon": "pi pi-arrow-right",
-            "title": "Monthly Progress",
-            "description": "Shows current month's progress report"
-          }
-        },
-        {
-          "type": "CardLink",
-          "schema": {
-            "route": "/admin",
-            "icon": "pi pi-warehouse",
-            "title": "Admin",
-            "description": "Manage data"
+            "title": "New League Night",
+            "description": "Create a new league night"
           }
         }
       ],

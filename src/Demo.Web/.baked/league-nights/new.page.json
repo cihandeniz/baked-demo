@@ -1,0 +1,62 @@
+{
+  "type": "FormPage",
+  "schema": {
+    "title": {
+      "title": "New League Night",
+      "description": "Create a new league night",
+      "actions": [
+        {
+          "type": "Button",
+          "schema": {
+            "label": "Back",
+            "variant": "text"
+          },
+          "action": {
+            "type": "Local",
+            "composable": "useRedirect",
+            "options": {
+              "type": "Inline",
+              "value": {
+                "back": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "submit": {
+      "label": "Save",
+      "severity": "primary"
+    },
+    "inputs": [
+      {
+        "name": "date",
+        "required": true,
+        "component": {
+          "type": "InputText",
+          "schema": {
+            "label": "Date"
+          }
+        }
+      }
+    ],
+    "path": "league-nights/new"
+  },
+  "action": {
+    "type": "Remote",
+    "path": "league-nights",
+    "method": "POST",
+    "body": {
+      "type": "Context",
+      "key": "model"
+    },
+    "postAction": {
+      "type": "Publish",
+      "event": "with",
+      "data": {
+        "type": "Context",
+        "key": "response"
+      }
+    }
+  }
+}
