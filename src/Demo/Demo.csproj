@@ -12,4 +12,10 @@
     <PackageReference Include="Baked.Abstractions" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EmptyConstructor.Fody" PrivateAssets="All" />
+    <PackageReference Include="Fody" PrivateAssets="All" />
+    <PackageReference Include="Publicize.Fody" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" PrivateAssets="All" />
+  </ItemGroup>
 </Project>

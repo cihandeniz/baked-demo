@@ -7,19 +7,17 @@ namespace Demo;
 /// </summary>
 public class Worklog(IEntityContext<Worklog> _context)
 {
-    protected Worklog() : this(default!) { }
-
     /// <summary>
     /// Id of the record
     /// </summary>
-    public virtual Guid Id { get; protected set; } = default!;
-    public virtual DateTime Beginning { get; protected set; } = default!;
-    public virtual DateTime Ending { get; protected set; } = default!;
-    public virtual string Text { get; protected set; } = default!;
-    public virtual Work Work { get; protected set; } = default!;
-    public virtual Contributor Contributor { get; protected set; } = default!;
+    public Guid Id { get; private set; } = default!;
+    public DateTime Beginning { get; private set; } = default!;
+    public DateTime Ending { get; private set; } = default!;
+    public string Text { get; private set; } = default!;
+    public Work Work { get; private set; } = default!;
+    public Contributor Contributor { get; private set; } = default!;
 
-    public virtual TimeSpan Duration => Ending - Beginning;
+    public TimeSpan Duration => Ending - Beginning;
 
     /// <summary>
     /// Submits a new worklog
@@ -29,7 +27,7 @@ public class Worklog(IEntityContext<Worklog> _context)
     /// <param name="text">Short description of what work has been done</param>
     /// <param name="work">Related work</param>
     /// <param name="contributor">Person who has done this contribution</param>
-    public virtual Worklog With(DateTime beginning, DateTime ending, string text, Work work, Contributor contributor)
+    public Worklog With(DateTime beginning, DateTime ending, string text, Work work, Contributor contributor)
     {
         if (beginning >= ending) { throw new InvalidDurationException(beginning, ending); }
 

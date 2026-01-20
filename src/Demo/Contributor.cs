@@ -4,12 +4,10 @@ namespace Demo;
 
 public class Contributor(IEntityContext<Contributor> _context)
 {
-    protected Contributor() : this(default!) { }
+    public Guid Id { get; protected set; } = default!;
+    public string Name { get; protected set; } = default!;
 
-    public virtual Guid Id { get; protected set; } = default!;
-    public virtual string Name { get; protected set; } = default!;
-
-    public virtual Contributor With(string name)
+    public Contributor With(string name)
     {
         _context.Insert(this);
 
@@ -18,7 +16,7 @@ public class Contributor(IEntityContext<Contributor> _context)
         return this;
     }
 
-    public virtual void Delete() =>
+    public void Delete() =>
         _context.Delete(this);
 }
 

@@ -4,12 +4,10 @@ namespace Demo;
 
 public class Work(IEntityContext<Work> _context, Worklogs _worklogs)
 {
-    protected Work() : this(default!, default!) { }
+    public Guid Id { get; private set; } = default!;
+    public string Name { get; private set; } = default!;
 
-    public virtual Guid Id { get; protected set; } = default!;
-    public virtual string Name { get; protected set; } = default!;
-
-    public virtual Work With(string name)
+    public Work With(string name)
     {
         Name = name;
 
@@ -18,10 +16,10 @@ public class Work(IEntityContext<Work> _context, Worklogs _worklogs)
         return this;
     }
 
-    public virtual void Delete() =>
+    public void Delete() =>
         _context.Delete(this);
 
-    public virtual List<Worklog> GetWorklogs() =>
+    public List<Worklog> GetWorklogs() =>
         _worklogs.ByWork(this);
 }
 
